@@ -1,0 +1,2 @@
+-- Выведем список курсов со средним баллом по экзамену. Список отсортирован по убыванию среднего балла.
+SELECT c.title, ROUND(AVG(e.score)::numeric,1) AS avg_score FROM courses c JOIN exams e ON c.c_no = e.no_c GROUP BY c.title ORDER BY avg_score DESC;

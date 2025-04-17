@@ -1,0 +1,2 @@
+-- Запрос, который возвращает всех студентов, которые еще не сдали ни одного экзамена.
+SELECT name_s FROM exams WHERE s_id IN (SELECT s_id FROM exams GROUP BY s_id HAVING MIN(score) = 0 AND MAX(score) = 0) GROUP BY name_s;

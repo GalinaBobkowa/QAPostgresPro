@@ -1,0 +1,2 @@
+-- Запрос, который возвращает список студентов и количество сданных им экзаменов. Только для студентов, у которых есть сданные экзамены.
+SELECT s.name, COUNT(e.score) as score_count FROM students s JOIN exams e ON s.id = e.s_id WHERE e.score != 0 GROUP BY s.name ORDER BY score_count DESC;
